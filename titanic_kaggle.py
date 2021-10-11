@@ -20,7 +20,7 @@ gender_submission = pd.read_csv(gender_submission_path)
 
 #titanic_full = pd.concat([titanic_train, titanic_test], ignore_index= False)
 
-####### STEP 1 APPROCHE BEGINNER
+####### STEP 1 APPROCHE BEGINNER ###########
 
 #Explore the data
 
