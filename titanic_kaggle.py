@@ -19,6 +19,7 @@ gender_submission = pd.read_csv(gender_submission_path)
 
 
 #titanic_full = pd.concat([titanic_train, titanic_test], ignore_index= False)
+
 ####### STEP 1 APPROCHE BEGINNER
 
 #Explore the data
@@ -35,7 +36,7 @@ corr_matrix = titanic_train.corr()
 #Fare and Pclass seems to have a high influence on the survival rate - Parch and Age following
 
 
-### Prepare and clean data
+#Prepare and clean data
 
 def preprocessing_data(X):
     #names seem hard to use - we can flag mrs-mr and mme
@@ -104,7 +105,7 @@ preprocessing_data(titanic_test)
 titanic_label_test = gender_submission['Survived']
 
 
-### Train the model
+#Train the model
 
 
 ##Linear Regression ... Do not think it is the best in this case since we are more dealing with a classification issue
@@ -134,7 +135,7 @@ from sklearn.model_selection import cross_val_score
 scores = cross_val_score(log_reg,titanic_train,titanic_label,scoring = 'accuracy',cv = 5)
 print(scores.mean()) ##0.789
 
-#lets use test data now
+#Lets use test data now
 titanic_prediction_test = log_reg.predict(titanic_test)
 confusion_matrix_test = confusion_matrix(titanic_label_test, titanic_prediction_test)
 print(confusion_matrix_test)
@@ -197,21 +198,6 @@ for model in [svm_clf,rnd_clf,log_reg,voting_clf]:
     titanic_prediction = model.predict(titanic_test)
     print(accuracy_score(titanic_label_test, titanic_prediction))
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
