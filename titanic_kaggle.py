@@ -25,7 +25,7 @@ gender_submission = pd.read_csv(gender_submission_path)
 #Explore the data
 
 pd.set_option('display.max_columns', None)
-`
+
 import matplotlib.pyplot as plt
 titanic_train.hist(bins=50, figsize=(40,30))
 plt.show()
@@ -192,7 +192,7 @@ voting_clf = VotingClassifier(
 voting_clf.fit(titanic_train, titanic_label)
 
 
-###let's compare the model on the test data
+###let's compare the models on the test data
 from sklearn.metrics import accuracy_score
 for model in [svm_clf,rnd_clf,log_reg,voting_clf]:
     titanic_prediction = model.predict(titanic_test)
